@@ -9,6 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.chinamobile.cmos.sms.AbstractSmsDcs;
 import com.zx.sms.connect.manager.EndpointEntity;
 import com.zx.sms.connect.manager.ServerServerEndpoint;
+import io.netty.channel.ChannelHandlerContext;
 
 public class SMPPServerEndpointEntity extends EndpointEntity implements ServerServerEndpoint {
 	private static final long serialVersionUID = -1247226404595679209L;
@@ -41,7 +42,12 @@ public class SMPPServerEndpointEntity extends EndpointEntity implements ServerSe
 	{
 		return childrenEndpoint.get(userName).get(chType);
 	}
-	
+
+	@Override
+	public EndpointEntity getChild(ChannelHandlerContext ctx, String userName) {
+		return null;
+	}
+
 	public List<EndpointEntity> getAllChild()
 	{
 		List<EndpointEntity> list = new ArrayList<EndpointEntity>();

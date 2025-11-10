@@ -82,7 +82,7 @@ public class SessionLoginManager extends AbstractSessionLoginManager {
 			String username = message.getSourceAddr();
 			if (entity instanceof ServerServerEndpoint) {
 				ServerServerEndpoint serverEntity = (ServerServerEndpoint) entity;
-				return serverEntity.getChild(username.trim());
+				return serverEntity.getChild(ctx, username.trim());
 			}
 		}
 		return null;

@@ -12,6 +12,7 @@ import com.zx.sms.connect.manager.smgp.SMGPServerChildEndpointEntity;
 import com.zx.sms.connect.manager.smgp.SMGPServerEndpointEntity;
 import com.zx.sms.connect.manager.smpp.SMPPServerChildEndpointEntity;
 import com.zx.sms.connect.manager.smpp.SMPPServerEndpointEntity;
+import io.netty.channel.ChannelHandlerContext;
 
 public class MixedServerEndpointEntity extends EndpointEntity implements ServerServerEndpoint {
 
@@ -95,6 +96,11 @@ public class MixedServerEndpointEntity extends EndpointEntity implements ServerS
 			return smppServerEndpointEntity.getChild(userName,chType);
 		}
 		return null;
+	}
+
+	@Override
+	public EndpointEntity getChild(ChannelHandlerContext ctx, String userName) {
+		return getChild(userName);
 	}
 
 	@SuppressWarnings("unchecked")

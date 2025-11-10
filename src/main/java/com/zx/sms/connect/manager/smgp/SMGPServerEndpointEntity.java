@@ -9,6 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.chinamobile.cmos.sms.AbstractSmsDcs;
 import com.zx.sms.connect.manager.EndpointEntity;
 import com.zx.sms.connect.manager.ServerServerEndpoint;
+import io.netty.channel.ChannelHandlerContext;
 
 public class SMGPServerEndpointEntity extends EndpointEntity implements ServerServerEndpoint {
 
@@ -35,6 +36,12 @@ public class SMGPServerEndpointEntity extends EndpointEntity implements ServerSe
 	{
 		return childrenEndpoint.get(userName).get(chType);
 	}
+
+	@Override
+	public EndpointEntity getChild(ChannelHandlerContext ctx, String userName) {
+		return null;
+	}
+
 	public EndpointEntity getChild(String userName)
 	{
 		return null;
