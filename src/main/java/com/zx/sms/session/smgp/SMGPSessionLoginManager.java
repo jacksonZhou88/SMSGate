@@ -57,7 +57,7 @@ public class SMGPSessionLoginManager extends AbstractSessionLoginManager {
 	}
 
 	@Override
-	protected EndpointEntity queryEndpointEntityByMsg(Object msg) {
+	protected EndpointEntity queryEndpointEntityByMsg(ChannelHandlerContext ctx, Object msg) {
 		
 		if(msg instanceof SMGPLoginMessage){
 			SMGPLoginMessage  message = (SMGPLoginMessage)msg;

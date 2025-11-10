@@ -76,7 +76,7 @@ public class SessionLoginManager extends AbstractSessionLoginManager {
 	}
 
 	@Override
-	protected EndpointEntity queryEndpointEntityByMsg(Object msg) {
+	protected EndpointEntity queryEndpointEntityByMsg(ChannelHandlerContext ctx, Object msg) {
 		if(msg instanceof CmppConnectRequestMessage){
 			CmppConnectRequestMessage  message = (CmppConnectRequestMessage)msg;
 			String username = message.getSourceAddr();

@@ -13,10 +13,10 @@
 		<proqject.build.sourceEncoding>UTF-8</proqject.build.sourceEncoding>
 		<skipTests>false</skipTests>
 		<netty.version>4.1.86.Final</netty.version>
-		<java_source_version>1.6</java_source_version>
-		<java_target_version>1.6</java_target_version>
-		<maven.compiler.source>1.6</maven.compiler.source>
-		<maven.compiler.target>1.6</maven.compiler.target>
+		<java_source_version>21</java_source_version>
+		<java_target_version>21</java_target_version>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
 	</properties>
 
 	<parent>

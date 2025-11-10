@@ -37,7 +37,7 @@ public class SgipSessionLoginManager extends AbstractSessionLoginManager {
 	}
 
 	@Override
-	protected EndpointEntity queryEndpointEntityByMsg(Object msg) {
+	protected EndpointEntity queryEndpointEntityByMsg(ChannelHandlerContext ctx, Object msg) {
 		
 		if(msg instanceof SgipBindRequestMessage){
 			SgipBindRequestMessage message = (SgipBindRequestMessage)msg;

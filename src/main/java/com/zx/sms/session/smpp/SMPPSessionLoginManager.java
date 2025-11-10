@@ -44,7 +44,7 @@ public class SMPPSessionLoginManager extends AbstractSessionLoginManager {
 	}
 
 	@Override
-	protected EndpointEntity queryEndpointEntityByMsg(Object msg) {
+	protected EndpointEntity queryEndpointEntityByMsg(ChannelHandlerContext ctx,Object msg) {
 		
 		if(msg instanceof BaseBind){
 			BaseBind  message = (BaseBind)msg;

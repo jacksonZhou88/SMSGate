@@ -121,7 +121,7 @@ public abstract class AbstractSessionLoginManager extends ChannelDuplexHandler {
 		ctx.fireChannelActive();
 	}
 
-	protected abstract EndpointEntity queryEndpointEntityByMsg(Object msg);
+	protected abstract EndpointEntity queryEndpointEntityByMsg(ChannelHandlerContext ctx, Object msg);
 
 	protected abstract boolean validAddressHost(EndpointEntity childentity, Channel channel,InetAddress remoteAddr);
 
@@ -190,7 +190,7 @@ public abstract class AbstractSessionLoginManager extends ChannelDuplexHandler {
 		// 通过用户名获取端口信息
 		EndpointEntity childentity = null;
 		try {
-			childentity = queryEndpointEntityByMsg(message);
+			childentity = queryEndpointEntityByMsg(ctx, message);
 			// 修改协议版本，使用客户端对应协议的协议解析器
 			changeProtoVersion(ctx, childentity, message);
 		}catch(Exception e) {
